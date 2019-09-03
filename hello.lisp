@@ -1,47 +1,22 @@
-#|************************variable basics********************************|#
-(defun foo (x)
-  (format t "param: ~a~%" x)
-  (let ((x 2))
-    (format t "outer let: ~a~%" x)
-    (let ((x 3))
-      (format t "inner let: ~a~%" x)
-    )
-    (format t "outer let: ~a~%" x)
-  )
-  (format t "param: ~a~%" x)
-)
+#|
+*****************************basic building blocks************************************************************
+the syntax of s-expressions understood by the reader and the syntax of Lisp forms understood by the evaluator.
+The basic elements of s-expressions are lists and atoms.
+Lists are delimited by parentheses and can contain any number of whitespace-separated elements.
+Atoms are everything else.
+Most commonly used kinds of atoms: numbers, strings, and names.
+|#
 
-(foo 1)
+(format t "param: ~a~%" (+ 5 5/4)) ; numbers: 5 5/4 & symbol +
+(format t "fo\\o~%") ; string
+(format t "fo\o~%") ; string
+(format t "~a" (+ (* 2 3) 4)) ; a list of a symbol, a list, and a number
 
-
-#|************************LISP function basics********************************|#
-
-;;;; simple hello function
-(defun hello (name)
-  (format t "hello ~a ~%" name)
-)
-(hello "hasan mansur")
-
-
-;;;; simple IF-ELSE
-(defun isTwo (n)
-  (if (= n 2)
-    (print 1)
-    (print 0)
-  )
-)
-(isTwo 2)
-
+;;a four-item list that contains two symbols, the empty list, and another list, itself containing two symbols and a string
+(defun hello-world ()
+  (format t "hello world"))
 
 #|
-(defun fac (n)
-  (if (= n 0)
-    1
-    (* n (fac
-          (- n 1)
-         )
-    )
-  )
- )
-(fac 2)
+*****************************variable basics************************************************************
+
 |#
