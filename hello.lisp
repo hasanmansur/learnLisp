@@ -15,8 +15,3 @@ Most commonly used kinds of atoms: numbers, strings, and names.
 ;;a four-item list that contains two symbols, the empty list, and another list, itself containing two symbols and a string
 (defun hello-world ()
   (format t "hello world"))
-
-#|
-*****************************variable basics************************************************************
-
-|#
